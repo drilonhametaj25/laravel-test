@@ -31,5 +31,5 @@ Route::group([
     'namespace' => 'App\Http\Controllers',
     'prefix' => 'breweries'
 ], function ($router) {
-    Route::post('', 'BreweriesController@getData')->name('api.breweries');
+    Route::post('/data', 'BreweriesController@getData')->name('api.breweries');
 });

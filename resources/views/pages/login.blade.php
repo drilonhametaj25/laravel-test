@@ -43,7 +43,7 @@ $(document).ready(function() {
             },
             success: function(data) {
                 localStorage.setItem("token", "Bearer "+data.authorisation.token)
-                window.location.href = "/breweries?token="+data.authorisation.token;
+                window.location.href = "/breweries";
             },
             error: function(jqXHR, textStatus, errorThrown) {
                 // Handle login errors (display error message, etc.)

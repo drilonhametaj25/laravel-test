@@ -75,7 +75,7 @@ function populateDataTable() {
             };
 
             $.ajax({
-                url: '/api/breweries', // Replace with your API endpoint URL
+                url: '/api/breweries/data', // Replace with your API endpoint URL
                 type: 'POST', // Adjust if your API expects a different method
                 dataType: 'json',
                 data: requestData,

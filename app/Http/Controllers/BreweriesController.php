@@ -10,7 +10,7 @@ class BreweriesController extends Controller
 
     public function __construct()
     {
-        $this->middleware('auth:api');
+        $this->middleware('auth:api', ['except' => ['breweries']]);
     }
 
     public function index(Request $request){
