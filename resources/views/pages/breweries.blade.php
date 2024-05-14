@@ -70,7 +70,7 @@ function populateDataTable() {
                 // Add sorting information (optional)
                 order: data.order,
                 // Add search information (optional)
-                search: data.search,
+                search: data.search.search,
                 // Additional custom filtering parameters (optional)
             };
 

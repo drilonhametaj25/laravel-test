@@ -21,7 +21,7 @@ Route::get('/registration', function () {
 });
 
 Route::group([
-    'middleware' => 'api',
+    'middleware' => 'web',
     'namespace' => 'App\Http\Controllers',
     'prefix' => 'breweries'
 ], function ($router) {

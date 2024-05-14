@@ -4,6 +4,7 @@ namespace App\Http\Middleware;
 
 use Illuminate\Auth\Middleware\Authenticate as Middleware;
 use Tymon\JWTAuth\Facades\JWTAuth;
+use Illuminate\Support\Facades\Auth;
 
 class Authenticate extends Middleware
 {
@@ -15,11 +16,6 @@ class Authenticate extends Middleware
      */
     public function handle($request, $next)
     {
-        error_log("HEY");
-        error_log(JWTAuth::check());
-        dd(auth('api'));
-        error_log("HEY");
-
         if(!Auth::check()){
             return redirect()->route('login');
         }
@@ -27,12 +23,12 @@ class Authenticate extends Middleware
     }
 
 
-    protected function redirectTo($request)
-    {
-        error_log($request);
-        error_log($request->expectsJson());
-        if (! $request->expectsJson()) {
-            return route('login');
-        }
-    }
+    // protected function redirectTo($request)
+    // {
+    //     error_log($request);
+    //     error_log($request->expectsJson());
+    //     if (! $request->expectsJson()) {
+    //         return route('login');
+    //     }
+    // }
 }

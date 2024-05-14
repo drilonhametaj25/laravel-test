@@ -16,6 +16,10 @@ class JWT
      */
     public function handle(Request $request, Closure $next)
     {
+        $token = $request->get('token');
+        if(!$token){
+            return redirect()->route('login');
+        }
         return $next($request);
     }
 }
